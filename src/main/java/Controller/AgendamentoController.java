@@ -25,8 +25,8 @@ public class AgendamentoController {
         agend.setLocationRelativeTo(null);
         agend.setVisible(true);
        
-        LoginHelper lo = new LoginHelper();
-        lo.FecharMenuPrincipal();
+        LoginHelper log = new LoginHelper();
+        log.FecharMenuPrincipal();
        
         
     } 

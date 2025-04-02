@@ -46,7 +46,7 @@ public class UsuarioDAO {
             ps.setString(1, usuario.getNome());
             ps.setString(2,usuario.getSenha());
             ps.setString(3, usuario.getNivel_Acesso());
-            ps.setString(4, String.valueOf(usuario.getSexo())); // Converte char para String
+            ps.setString(4, String.valueOf(usuario.getSexo())); //Converte char para String
             ps.setString(5, usuario.getTelefone());
             ps.setString(6,usuario.getEmail());
             ps.setString(7,usuario.getEndereco());
