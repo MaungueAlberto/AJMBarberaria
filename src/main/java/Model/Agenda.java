@@ -36,13 +36,7 @@ public class Agenda {
 
         }
         
-        //Passo o parametro da data como nString e continuo a usar na classe Agendamento o tipo data. 
-        //Issso para que o usuario consiga inserir a data sem problemas , e eu continuo a usar a biblioteca Date .
-        //Coloco no try_cacht
-        //Salvar "dd/MM/yyyy  HH:mm", na variavel data
-        
-            
-        //this.data = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(data);
+        data);
                
     
 
