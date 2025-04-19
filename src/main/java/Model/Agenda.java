@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class Agenda {
     private int Id;
@@ -35,6 +35,9 @@ public class Agenda {
     }
 
         }
+
+    public Agenda() {
+    }
         
       
                
