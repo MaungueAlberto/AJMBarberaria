@@ -4,31 +4,28 @@
  */
 package Controller;
 
-import Controller.Helper.LoginHelper;
+import Model.Agenda;
+import Model.Cliente;
+import Model.Servicos;
 import View.Agendamento;
-import View.MenuPrincipal;
 
 
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class AgendamentoController {
+
+    public AgendamentoController(View.Agendamento view) {
+        this.view = view;
+    }
+    
+    private final Agendamento view;
+    
   
-    public void EntrarAgendamento(){
-        
-       
-     
-        //menu1.setEnabled(false);
-        Agendamento agend = new Agendamento();
-        agend.setLocationRelativeTo(null);
-        agend.setVisible(true);
-       
-        LoginHelper log = new LoginHelper();
-        log.FecharMenuPrincipal();
+    
        
         
     } 
     
-}

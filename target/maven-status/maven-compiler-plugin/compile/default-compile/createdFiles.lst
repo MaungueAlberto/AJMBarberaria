@@ -18,9 +18,12 @@ View\MenuPrincipal$3.class
 Model\Usuario.class
 View\MenuPrincipal$1.class
 View\Agendamento$3.class
+Controller\MenuPrincipalController.class
 Model\Servicos.class
+View\Agendamento$5.class
 Controller\AgendamentoController.class
 Model\Agenda.class
+View\Login$4.class
 View\MenuPrincipal.class
 Model\Pessoa.class
 Controller\UsuarioController.class

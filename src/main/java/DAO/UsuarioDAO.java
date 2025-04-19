@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class UsuarioDAO {
      public Connection con;

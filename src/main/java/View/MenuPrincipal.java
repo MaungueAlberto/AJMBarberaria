@@ -1,21 +1,20 @@
 package View;
 
-import Controller.AgendamentoController;
-import Controller.UsuarioController;
-import javax.swing.JFrame;
+import Controller.MenuPrincipalController;
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuPrincipal
      */
-   
+    private final MenuPrincipalController controller;
     public MenuPrincipal() {
         initComponents();
+         controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -103,11 +102,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here
-        AgendamentoController AgendamentoController = new AgendamentoController();
-        AgendamentoController.EntrarAgendamento();
-        
-        
+
+        this.controller.EntrarAgenda();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

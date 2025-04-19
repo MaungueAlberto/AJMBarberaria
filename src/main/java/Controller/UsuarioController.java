@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 
 public class UsuarioController {

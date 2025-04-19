@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class LoginHelper {
     //Acesso a tela Login
@@ -54,33 +54,8 @@ public class LoginHelper {
           
     }
     }
-      public void FecharMenuPrincipal(){
-          menu.setVisible(false);
-      
-    }
      
-    //recebe por parametro o modelo acima
-    //Modificar modelo
-    public void setarModelo(Usuario modelo){
-      
-        String nome, senha;
-        nome = modelo.getNome();
-        senha =modelo.getSenha();
-        
-        //setar os campos de usuario e senha
-        view.getTxtNome().setText(nome);
-        view.getTxtSenha().setText(senha);
-        
-    }
-    
-    public void LimparTela(){
-        
-         view.getTxtNome().setText(" ");
-         view.getTxtSenha().setText(" ");
-        }
-    
-    
-    
+   
     
     
 }

@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author Maúngue
+ * @author Alberto Maúngue
  */
 //Classe abstrata, nao poderei instanciar Pessoa. Nao há interveniencia de pessoa no sistema , apenas CLIENTE e USUÁRIO 
 abstract public class Pessoa {

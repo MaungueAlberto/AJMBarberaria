@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class Login extends javax.swing.JFrame {
 
@@ -42,6 +42,12 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 240, -1));
 
         botaoLogin.setBackground(new java.awt.Color(153, 153, 153));
@@ -101,6 +107,10 @@ public class Login extends javax.swing.JFrame {
         LoginHelper helper = new LoginHelper(Login.this);
         helper.FazerLogin();
     }//GEN-LAST:event_botaoLoginActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
