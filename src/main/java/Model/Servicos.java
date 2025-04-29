@@ -19,6 +19,9 @@ public class Servicos {
         this.Preco = Preco;
     }
 
+    public Servicos() {
+    }
+
     public String getDescricao() {
         return Descricao;
     }

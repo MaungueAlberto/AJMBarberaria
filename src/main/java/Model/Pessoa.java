@@ -21,6 +21,9 @@ abstract public class Pessoa {
     protected String Telefone;
     protected String Email;
     protected String Endereco;
+
+    public Pessoa() {
+    }
     
     
     

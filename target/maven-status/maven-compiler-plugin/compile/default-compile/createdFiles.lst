@@ -15,9 +15,11 @@ View\Login$2.class
 DAO\Conexao.class
 View\Agendamento$1.class
 View\MenuPrincipal$3.class
+DAO\AgendamentoDAO.class
 Model\Usuario.class
 View\MenuPrincipal$1.class
 View\Agendamento$3.class
+View\Agendamento$6.class
 Controller\MenuPrincipalController.class
 Model\Servicos.class
 View\Agendamento$5.class

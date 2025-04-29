@@ -13,6 +13,11 @@ import java.util.Date;
 
 // Herda de Pessoa 
 public class Cliente extends Pessoa{
+
+public Cliente() {
+        super();
+        
+    }
     
     private String Endereco;
 
@@ -25,6 +30,15 @@ public class Cliente extends Pessoa{
         super(Id, Nome, Sexo);
         this.Endereco = Endereco;
     }
+
+    public String getNome() {
+        return Nome;
+    }
+
+    public void setNome(String Nome) {
+        this.Nome = Nome;
+    }
+    
     
     
 

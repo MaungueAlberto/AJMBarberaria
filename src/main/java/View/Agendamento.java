@@ -5,23 +5,30 @@
 package View;
 
 import Controller.AgendamentoController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
 
 
 
 
 /**
  *
- * @author Alberto Maúngues
+ * @author Alberto Maúngue
  */
 public class Agendamento extends javax.swing.JFrame {
   
     /**
      * Creates new form Agendamento
      */
-    public Agendamento() {
+    private final AgendamentoController Controller;
+    public Agendamento() throws SQLException, ClassNotFoundException {
         initComponents();
-        AgendamentoController Controller = new AgendamentoController(this);
+         Controller = new AgendamentoController(this);
+        iniciar();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,7 +40,7 @@ public class Agendamento extends javax.swing.JFrame {
     private void initComponents() {
 
         Tabela = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelaAgendamento = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
         BotaoAgendar = new javax.swing.JButton();
         CampoTexto = new javax.swing.JScrollPane();
@@ -57,7 +64,7 @@ public class Agendamento extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaAgendamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -83,7 +90,7 @@ public class Agendamento extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        Tabela.setViewportView(jTable1);
+        Tabela.setViewportView(TabelaAgendamento);
 
         getContentPane().add(Tabela, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 810, 140));
 
@@ -109,6 +116,12 @@ public class Agendamento extends javax.swing.JFrame {
         jLabel10.setText("Agendamento");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 220, 30));
         getContentPane().add(agData, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 230, -1));
+
+        agValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agValorActionPerformed(evt);
+            }
+        });
         getContentPane().add(agValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 230, -1));
         getContentPane().add(agHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 230, -1));
 
@@ -188,6 +201,10 @@ public class Agendamento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_agIDActionPerformed
 
+    private void agValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agValorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agValorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -218,18 +235,30 @@ public class Agendamento extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Agendamento().setVisible(true);
-                
+                try {
+                    new Agendamento().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Agendamento.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                                
             }
         });
       
     }
     private javax.swing.JTable TAbela;
+    
+    //Para o uso da tabela na classe Controller
+    public JTable getTabelaAgendamento() {
+    return TabelaAgendamento;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoAgendar;
     private javax.swing.JScrollPane CampoTexto;
     private javax.swing.JScrollPane Tabela;
+    private javax.swing.JTable TabelaAgendamento;
     private javax.swing.JComboBox<String> agCliente;
     private javax.swing.JTextField agData;
     private javax.swing.JTextField agHora;
@@ -246,7 +275,11 @@ public class Agendamento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    public void iniciar() throws SQLException, ClassNotFoundException {
+        this.Controller.CarregarTabelaAg();
+        System.out.println("CHEGUEI NO CARREGAR TABELA!");
+    }
 }

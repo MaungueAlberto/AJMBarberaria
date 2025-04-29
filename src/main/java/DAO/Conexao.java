@@ -6,14 +6,17 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
 /**
  *
- * @author J.Solutions
+ * @author Alberto Maúngue
  */
 public class Conexao {
+
+    
     
     private String  URL="jdbc:mysql://localhost:3306/BarbeariaMaungue?useSSL=false&serverTimezone=UTC";
     private String USUARIO = "root";
@@ -28,4 +31,8 @@ public class Conexao {
         }
         
      }
+     
+      public static PreparedStatement prepareStatement(String sql) throws SQLException {
+        return Conexao.prepareStatement(sql);
+    }
 }

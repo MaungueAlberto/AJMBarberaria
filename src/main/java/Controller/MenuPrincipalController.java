@@ -6,6 +6,9 @@ package Controller;
 
 import View.Agendamento;
 import View.MenuPrincipal;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,8 +23,15 @@ public class MenuPrincipalController {
     }
     
     public void EntrarAgenda(){
-       Agendamento agend = new Agendamento();
-       agend.setVisible(true);
-       agend.setLocationRelativeTo(null);
+        try {
+            Agendamento agend = new Agendamento();
+            agend.setVisible(true);
+            agend.setLocationRelativeTo(null);
+        } catch (SQLException ex) {
+            Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MenuPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }
 }
