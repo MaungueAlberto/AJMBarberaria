@@ -8,6 +8,7 @@ import Controller.AgendamentoController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 
 
@@ -52,8 +53,8 @@ public class Agendamento extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        agServico = new javax.swing.JComboBox<>();
-        agCliente = new javax.swing.JComboBox<>();
+        ComboBoxServico = new javax.swing.JComboBox<>();
+        ComboBoxCliente = new javax.swing.JComboBox<>();
         agID = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -140,21 +141,19 @@ public class Agendamento extends javax.swing.JFrame {
         jLabel9.setText("Valor Mt");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 90, 30));
 
-        agServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(agServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 230, -1));
+        getContentPane().add(ComboBoxServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 230, -1));
 
-        agCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Gugu", "Vava", "Tete" }));
-        agCliente.addItemListener(new java.awt.event.ItemListener() {
+        ComboBoxCliente.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                agClienteItemStateChanged(evt);
+                ComboBoxClienteItemStateChanged(evt);
             }
         });
-        agCliente.addActionListener(new java.awt.event.ActionListener() {
+        ComboBoxCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agClienteActionPerformed(evt);
+                ComboBoxClienteActionPerformed(evt);
             }
         });
-        getContentPane().add(agCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 230, -1));
+        getContentPane().add(ComboBoxCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 230, -1));
 
         agID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,13 +188,13 @@ public class Agendamento extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void agClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_agClienteItemStateChanged
+    private void ComboBoxClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBoxClienteItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_agClienteItemStateChanged
+    }//GEN-LAST:event_ComboBoxClienteItemStateChanged
 
-    private void agClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agClienteActionPerformed
+    private void ComboBoxClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_agClienteActionPerformed
+    }//GEN-LAST:event_ComboBoxClienteActionPerformed
 
     private void agIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agIDActionPerformed
         // TODO add your handling code here:
@@ -250,20 +249,17 @@ public class Agendamento extends javax.swing.JFrame {
     private javax.swing.JTable TAbela;
     
     //Para o uso da tabela na classe Controller
-    public JTable getTabelaAgendamento() {
-    return TabelaAgendamento;
-}
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoAgendar;
     private javax.swing.JScrollPane CampoTexto;
+    private javax.swing.JComboBox<String> ComboBoxCliente;
+    private javax.swing.JComboBox<String> ComboBoxServico;
     private javax.swing.JScrollPane Tabela;
     private javax.swing.JTable TabelaAgendamento;
-    private javax.swing.JComboBox<String> agCliente;
     private javax.swing.JTextField agData;
     private javax.swing.JTextField agHora;
     private javax.swing.JTextField agID;
-    private javax.swing.JComboBox<String> agServico;
     private javax.swing.JTextField agValor;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -280,6 +276,29 @@ public class Agendamento extends javax.swing.JFrame {
 
     public void iniciar() throws SQLException, ClassNotFoundException {
         this.Controller.CarregarTabelaAg();
-        System.out.println("CHEGUEI NO CARREGAR TABELA!");
+        this.Controller.AtualizarCliente();
+        this.Controller.AtualizarServico();
+        System.out.println("CHEGUEI NO #CARREGAR TABELA!#");
     }
+      public JTable getTabelaAgendamento() {
+    return TabelaAgendamento;
+}
+
+      //Gettrs e Settrs de ComboBox Cliente e Servivo, para colocar os nomes dos cliente e os servicos
+    public JComboBox<String> getComboBoxCliente() {
+        return ComboBoxCliente;
+    }
+
+    public void setComboBoxCliente(JComboBox<String> ComboBoxCliente) {
+        this.ComboBoxCliente = ComboBoxCliente;
+    }
+
+    public JComboBox<String> getComboBoxServico() {
+        return ComboBoxServico;
+    }
+
+    public void setComboBoxServico(JComboBox<String> ComboBoxServico) {
+        this.ComboBoxServico = ComboBoxServico;
+    }
+
 }

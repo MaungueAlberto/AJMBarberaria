@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +25,31 @@ import java.util.logging.Logger;
 public class AgendamentoDAO {
     
     Conexao conexao = new Conexao();
+    
+    
+//    public void inserir(Agenda agenda){
+//        PreparedStatement ps;
+//        String query = "INSERT INTO client Agenda(nome, tipo, valor, data) VALUES(?,?,?,?)";
+//        try {
+//            ps = conexao.prepareStatement(query);
+//            
+//            ps.setString(1,agenda.getNome());
+//            ps.setString(2, agenda.getTipo());
+//            ps.setString(3,agenda.getValor());
+//            ps.setString(4,agenda.getData());
+//           
+//            ps.executeUpdate();
+//            ps.close();
+//             int rowsInserted = ps.executeUpdate();
+//            if (rowsInserted > 0) {
+//                JOptionPane.showMessageDialog(null, "Insercao bem sucedida!");
+//                System.out.println("Insercao bem sucedida!");
+//            }
+//        } catch (SQLException e) {
+//            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//    }
+    
    public List<Agenda> listarAgendamentos() throws SQLException, ClassNotFoundException {
         List<Agenda> lista = new ArrayList<>();
         String sql = "SELECT a.id, a.valor, a.data, c.Nome AS cliente_nome, s.tipo AS servico_tipo " +

@@ -6,6 +6,14 @@ package Model;
 
 
 public class Servicos {
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     private int id;
     private String Descricao;
@@ -47,7 +55,10 @@ public class Servicos {
     }
     
     
-  
+   @Override 
+   public String toString(){
+       return getTipo();
+   }
 
    
     

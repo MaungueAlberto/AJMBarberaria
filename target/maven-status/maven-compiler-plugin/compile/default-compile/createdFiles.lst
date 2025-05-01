@@ -12,6 +12,7 @@ Controller\Helper\LoginHelper.class
 View\Agendamento$4.class
 View\MenuPrincipal$2.class
 View\Login$2.class
+DAO\ServicoDAO.class
 DAO\Conexao.class
 View\Agendamento$1.class
 View\MenuPrincipal$3.class

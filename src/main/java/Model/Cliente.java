@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author Maúngue
+ * @author Alberto Maúngue
  */
 
 // Herda de Pessoa 
@@ -52,7 +52,10 @@ public Cliente() {
     
     
 
-    
+    @Override
+    public String toString(){
+        return getNome();
+    }
 
    
     
