@@ -141,6 +141,11 @@ public class Agendamento extends javax.swing.JFrame {
         jLabel9.setText("Valor Mt");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 90, 30));
 
+        ComboBoxServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxServicoActionPerformed(evt);
+            }
+        });
         getContentPane().add(ComboBoxServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, 230, -1));
 
         ComboBoxCliente.addItemListener(new java.awt.event.ItemListener() {
@@ -203,6 +208,10 @@ public class Agendamento extends javax.swing.JFrame {
     private void agValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agValorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_agValorActionPerformed
+
+    private void ComboBoxServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxServicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboBoxServicoActionPerformed
 
     /**
      * @param args the command line arguments

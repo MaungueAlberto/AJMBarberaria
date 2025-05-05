@@ -7,6 +7,7 @@ package DAO;
 
 import Model.Cliente;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,6 +59,28 @@ public class ClienteDAO{
             e.printStackTrace();
         }
         return lista;
+    }
+    
+    public boolean inserir(Cliente cliente){
+        PreparedStatement ps;
+        
+        String query = "INSERT INTO CLiente( Nome, sexo, Data_Nascimeto, Telefone, Email, Endereco) VALUES(?,?,?,?,?,?)";
+        try {
+            ps = this.conexao.prepareStatement(query);
+            
+            ps.setString(1, cliente.getNome());
+            ps.setString(2,String.valueOf(cliente.getSexo()));
+            ps.setDate(3, (Date) cliente.getData_Nascimento());
+            ps.setString(4, cliente.getTelefone()); //Converte char para String
+            ps.setString(5, cliente.getEmail());
+            ps.setString(6,cliente.getEndereco());
+           // ps.setString(1, nome);
+            ps.executeUpdate();
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("CONEXAO COM BD  NAO DISPONIVEL"+e.getMessage());
+        }
+         return true;
     }
         }
 

@@ -4,6 +4,7 @@ View\MenuPrincipal$4.class
 Model\Cliente.class
 Model\SimpleDateFormat.class
 View\Agendamento.class
+View\Agendamento$7.class
 View\Login$1.class
 View\Login.class
 View\Main.class
